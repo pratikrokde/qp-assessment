@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "e8cab43e-6917-4456-86c1-99dd8bd76fbb",
+		"name": "Grocery Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14972404"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get All Items",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "role",
+								"value": "admin",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/admin/items"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Item",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"tomato\",\r\n    \"price\": \"95\",\r\n    \"stock\": \"25\",\r\n    \"unit\": \"2\" // 1 for each & 2 for kg\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/admin/items"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "role",
+								"value": "admin",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stock\" : \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/admin/items/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "role",
+								"value": "admin",
+								"type": "text"
+							}
+						],
+						"url": "{{base_url}}/admin/items/9"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/user/items"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orders\": [\r\n        {\r\n            \"name\": \"coconut\",\r\n            \"quantity\": \"6\",\r\n            \"user_id\" : \"2\"\r\n        },\r\n         {\r\n            \"name\": \"tomato\",\r\n            \"quantity\": \"6\",\r\n            \"user_id\" : \"2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/user/order"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
