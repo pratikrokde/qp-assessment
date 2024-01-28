@@ -57,22 +57,3 @@ module.exports = { runQuery };
 
 
 
-
-// const runQuery = async (query, params) => {
-//     const connection = await getConnection();
-//     console.log('Connected to database....');
-//     return new Promise((resolve, reject) => {
-//         connection.query(query, params, function (error, results) {
-//             if (error) reject(error);
-//             else {
-//                 resolve({
-//                     error: false,
-//                     msg: 'ok',
-//                     data: results
-//                 })
-//             }
-//             connection.end();
-//             console.log('disconnected....');
-//         })
-//     })
-// }
